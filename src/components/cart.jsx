@@ -1,48 +1,67 @@
-import TiendaVirtual from "../App";
 import React, { useState } from 'react';
-import ProductCard from './components/ProductCard';
+import ProductCard from './ProductCard';
+import App from '../App'; 
 
-const Cart = () =>{
-    const vaciarAlCarrito = () => {
-        setCarrito([]);
-      };
-    
-    const eliminarDelCarrito = (productoId) => {
-        const index = carrito.findIndex(item => item.id === productoId);
-        if (index !== -1) {
-          const nuevoCarrito = [...carrito];
-          nuevoCarrito.splice(index, 1);
-          setCarrito(nuevoCarrito);
-        }
-      };
- return(   
-    <div className="carrito">
-      <h2>Carrito</h2>
-      <div className="boton-agregar">
-        <span>{carrito.length} artículos</span>
-        <button className='boton-eliminar' onClick={vaciarAlCarrito}>Vaciar</button>
-      </div>
-      <ul>
-        {carrito.map((item, index) => (
-          <div key={index} className="carrito-item">
-            <img 
-              src={item.imagen} 
-              alt={item.nombre} 
-              className="carrito-item-imagen"
-            />
-            <span>{item.nombre} - ${item.precio}</span>
-            <button className='boton-eliminar' 
-            onClick={() => eliminarDelCarrito(item.id)}
-            >Eliminar</button>
+const TiendaVirtual = ({ productos, carrito, agregarAlCarrito, vaciarAlCarrito, eliminarDelCarrito }) => {
+
+  const [busqueda, setBusqueda] = useState('');
+
+  const productosFiltrados = productos.filter(producto =>
+      producto.categoria.toLowerCase().includes(busqueda.toLowerCase())
+  );
+
+  return (
+      <div className="container">
+          <h1>Tienda Virtual</h1>
+
+          <div >
+              <input
+                  type="text"
+                  placeholder="Buscar productos..."
+                  value={busqueda}
+                  onChange={(e) => setBusqueda(e.target.value)}
+                  className="buscador-input"
+              />
           </div>
-        ))}
-      </ul>
-      <p className="carrito-total">
-        Total: ${carrito.reduce((sum, item) => sum + item.precio, 0)}
-      </p>
-    </div>
-   );
-}
+
+          <div className="productos-grid">
+              {productosFiltrados.length > 0 ? productosFiltrados.map((producto) => (
+                  <ProductCard
+                      key={producto.id}
+                      producto={producto}
+                      onAgregarAlCarrito={agregarAlCarrito}
+                  />
+              )) : (
+                  <p> No se encontraron registros </p>
+              )}
+          </div>
+
+          <div className="carrito">
+              <h2>Carrito</h2>
+              <div className="boton-agregar">
+                  <span>{carrito.length} artículos</span>
+                  <button className='boton-eliminar' onClick={vaciarAlCarrito}>Vaciar</button>
+              </div>
+              <ul>
+                  {carrito.map((item, index) => (
+                      <div key={index} className="carrito-item">
+                          <img
+                              src={item.imagen}
+                              alt={item.categoria}
+                              className="carrito-item-imagen"
+                          />
+                          <span>{item.categoria} - ${item.precio}</span>
+                          <button className='boton-eliminar' onClick={() => eliminarDelCarrito(item.id)}>Eliminar</button>
+                      </div>
+                  ))}
+              </ul>
+              <p className="carrito-total">
+                  Total: ${carrito.reduce((sum, item) => sum + item.precio, 0)}
+              </p>
+          </div>
+      </div>
+  );
+};
 
 
-export default Cart;
+export default TiendaVirtual;
