@@ -1,3 +1,9 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
@@ -58,7 +64,7 @@ button:focus-visible {
 @media (prefers-color-scheme: light) {
   :root {
     color: #213547;
-    background-color: #ffffff;
+    background: #FAF1E6;
   }
   a:hover {
     color: #747bff;
@@ -74,6 +80,7 @@ button:focus-visible {
 body {
   font-family: Arial, sans-serif;
   line-height: 1.5;
+  
 }
 
 .container {
@@ -91,6 +98,7 @@ h1 {
   border-radius: 16px;
   height: 30px;
   margin: 20px 0px;
+  background-color: #D9D9D9;
 }
 
 /* Grid de productos */
@@ -106,74 +114,102 @@ h1 {
   }
 }
 
+@media (min-width: 320px) {
+  .productos-grid {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
 /* Tarjeta de producto */
 .producto-card {
-  border: 1px solid #e2e8f0;
-  border-radius: 0.25rem;
   padding: 1rem;
-  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
 }
 
 .producto-imagen {
   width: 100%;
-  height: 12rem;
+  height: 20rem;
   object-fit: cover;
-  border-radius: 0.25rem;
+  border-radius: 10px;
   margin-bottom: 0.5rem;
 }
 
 .producto-nombre {
   font-size: 1.125rem;
   font-weight: 600;
+  color: #000;
+  font-family: Poppins;
 }
 
 .producto-precio {
-  color: red;
+  color: #000;
+  font-family: Poppins;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 16px; /* 106.667% */
 }
 
 .boton-agregar {
-  margin-top: 0.5rem;
-  background-color: #4299e1;
-  color: white;
-  padding: 0.5rem 1rem;
-  border-radius: 0.25rem;
-  border: none;
-  cursor: pointer;
+  border-radius: 11px;
+  color: #FAF1E6;
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 16px; /* 145.455% */
+  background: linear-gradient(0deg, #FE7A36 0%, #FE7A36 100%), linear-gradient(0deg, rgba(217, 217, 217, 0.00) 26.98%, #1A4870 91.9%);
 }
 
 .boton-agregar:hover {
-  background-color: #3182ce;
+  background-color: #be5809;
 }
 .boton-eliminar {
   margin-top: 0.5rem;
   margin-left: 0.5rem;
-  border-color: white;
-  color: #e43721;
+  color: #1A4870;
   padding: 0.5rem 1rem;
   border-radius: 0.25rem;
   border: none;
   cursor: pointer;
+  background-color: #f9f9f9;
 }
 
 .boton-eliminar:hover {
-  background-color: #e43721;
+  background-color: #1A4870;
   color: white;
+}
+
+.boton-vaciar {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  margin-left: 12rem;
+  color: #1A4870;
+  padding: 0.5rem 1rem;
+  border-radius: 0.25rem;
+  border: none;
+  cursor: pointer;
+  background-color: #f9f9f9;
+  text-align: center;
+
 }
 
 /* Carrito */
 .carrito {
   margin-top: 2rem;
+  background-color: #D9D9D9;
 }
 
 .carrito h2 {
   font-size: 1.25rem;
   font-weight: bold;
   margin-bottom: 0.5rem;
+  color: #1F316F;
+  font-family: Poppins;
+  
 }
 
 .carrito-resumen {
   display: flex;
   align-items: center;
+  background-color: #8e9fcd;
 }
 
 .carrito-icono {
@@ -182,13 +218,15 @@ h1 {
 
 .carrito-lista {
   margin-top: 0.5rem;
+  background-color: #1F316F;
 }
 
 .carrito-item {
-  color: #4a5568;
   display: flex;
   align-items: center;
   margin-bottom: 0.5rem;
+  color: #1F316F;
+  font-family: Poppins;
 }
 
 .carrito-item-imagen {
@@ -197,7 +235,7 @@ h1 {
   object-fit: cover;
   border-radius: 0.25rem;
   margin-right: 0.5rem;
-}
+  }
 
 .carrito-total {
   margin-top: 0.5rem;
@@ -211,6 +249,7 @@ h1 {
   grid-template-rows: repeat(2, 1fr);
   gap: 20px;
   padding: 20px;
+  border-radius: 10px;
 }
 
 .producto-detalle{
@@ -223,7 +262,7 @@ h1 {
   width: 100%;
   height: 19rem;
   object-fit: cover;
-  border-radius: 0.25rem;
+  border-radius: 10px;
   margin-bottom: 0.5rem;
 }
 .detalle-producto{
