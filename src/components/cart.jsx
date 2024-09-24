@@ -12,16 +12,17 @@ const TiendaVirtual = ({ productos, carrito, agregarAlCarrito, vaciarAlCarrito, 
 
   return (
       <div className="container">
-          <h1>Tienda Virtual</h1>
+          <h1></h1>
 
           <div >
-              <input
-                  type="text"
-                  placeholder="Buscar productos..."
-                  value={busqueda}
-                  onChange={(e) => setBusqueda(e.target.value)}
-                  className="buscador-input"
-              />
+          <select onChange={(e) => handleOnchange(e.target.value)} className="buscador-input">
+            <option value="">Todas las Categorías</option>
+            <option value="Estampas de grabado">Estampas de grabado</option>
+            <option value="Bordado cartográfico">Bordado cartográfico</option>
+            <option value="Dibujos">Dibujos</option>
+            <option value="Fotografías performance">Fotografías performance</option>
+        </select>
+             
           </div>
 
           <div className="productos-grid">
@@ -38,9 +39,9 @@ const TiendaVirtual = ({ productos, carrito, agregarAlCarrito, vaciarAlCarrito, 
 
           <div className="carrito">
               <h2>Carrito</h2>
-              <div className="boton-agregar">
+              <div className="carrito-resumen">
                   <span>{carrito.length} artículos</span>
-                  <button className='boton-eliminar' onClick={vaciarAlCarrito}>Vaciar</button>
+                  <button className='boton-vaciar' onClick={vaciarAlCarrito}>Vaciar</button>
               </div>
               <ul>
                   {carrito.map((item, index) => (
