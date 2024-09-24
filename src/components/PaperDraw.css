@@ -1,0 +1,132 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --ColorPrimerio: #FAF1E6;
+    --ColorSegundo: rgb(31, 49, 111);
+    --ColorTercero: #FE7A36;
+    --ColorCuarto: #D9D9D9;
+}
+
+h2 span{
+    font-size: 3.2rem;
+    font-weight: 600;
+}
+html {
+    font-size: 62.5%;
+    font-family: "Poppins", system-ui;
+    
+}
+
+
+.card_text{
+    display: flex;
+    justify-content: space-between;
+        align-items: center;
+        gap: 4rem;
+}
+.card_text p {
+
+    width: 15rem;
+    font-size: 2rem;
+    color: var(--ColorSegundo);
+    font-weight: 200;
+
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    margin: 2rem;
+
+}
+
+h2 {
+    font-size: 2.2rem;
+    color: var(--ColorSegundo);
+    font-weight: 500;
+    margin-top: 2rem;
+}
+
+
+.box_paper{
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    background-image: url('/src/img/torn-craft-paper-piece-texture-2024-06-07-01-55-09-utc.jpg');
+    width: 15rem;
+    height: 20rem;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin: 0;
+    border-radius: 1rem;
+    align-items: center;
+    
+}
+.box_paper h3{
+    font-size: 2rem;
+    color: var(--ColorPrimerio);
+    backdrop-filter: blur(0.2rem);
+}
+
+.perro{
+    width: 50vw;
+    z-index: 1;
+}
+.illustration{
+    background-image: linear-gradient(180deg, rgba(254, 121, 54, 0) 10%, rgb(14, 14, 14) 100%), url('/src/img/muneca.jpeg');
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    width: 15rem;
+    height: 13rem;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    margin: 0;
+    border-radius: 1rem;
+    align-items: end;
+}
+.illustration h3{
+    font-size: 2rem;
+    color: var(--ColorPrimerio);
+    backdrop-filter: blur(0.2rem);
+    width: 100%;
+    padding-bottom: 1rem;
+}
+.draw{
+    display: flex;
+    margin-top: 3rem;
+}
+.matera{
+    background-image: linear-gradient(180deg, rgba(254, 121, 54, 0) 10%, rgb(14, 14, 14) 100%), url('/src/img/Matera_1.jpg');
+        display: flex;
+        text-align: center;
+        justify-content: center;
+        width: 15rem;
+        height: 12.5rem;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        margin: 0;
+        border-radius: 1rem;
+        align-items: end;
+}
+.matera h3 {
+    font-size: 2rem;
+    color: var(--ColorPrimerio);
+    backdrop-filter: blur(0.2rem);
+    width: 100%;
+    padding-bottom: 1rem;
+}
+.box_group{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 31rem;
+}

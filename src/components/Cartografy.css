@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --ColorPrimerio: #FAF1E6;
+    --ColorSegundo: #1f316f;
+    --ColorTercero: #FE7A36;
+    --ColorCuarto: #D9D9D9;
+}
+html {
+    font-size: 62.5%;
+    font-family: "Poppins", system-ui;
+
+}
+.secado_plantas{
+    background-color: rgba(254, 122, 54, 0.3);
+    margin-top: 6rem;
+
+}
+.pinzas{
+    height: 32rem;
+    width: 100%;
+}
+.secado_plantas h4{
+    font-size: 3rem;
+    font-weight: 300;
+    margin-top: -7rem;
+    margin-left: 8rem;
+    color: var(--ColorSegundo);
+}
+.secado_plantas h4 span {
+    font-size: 4rem;
+    font-weight: 600;
+    color: var(--ColorTercero);
+}
+.card_text_2 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 4rem;
+    margin: 2rem;
+}
+
+.card_text_2 p {
+
+    width: 15rem;
+    font-size: 2rem;
+    color: var(--ColorSegundo);
+    font-weight: 200;
+
+}
+.box_secado{
+    display: flex;
+        text-align: center;
+        justify-content: center;
+        background-image: url('/src/img/riografía.jpg');
+        width: 15rem;
+        height: 20rem;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        margin: 0;
+        border-radius: 1rem;
+        align-items: center;
+
+}
+.box_secado h3 {
+    font-size: 2rem;
+    color: var(--ColorPrimerio);
+    backdrop-filter: blur(0.2rem);
+}
+.card_text_invert{
+   
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 4rem;
+    margin: 2rem; 
+    flex-direction: row-reverse;
+    margin-bottom: 3rem;
+}
+.card_text_invert p {
+
+    width: 15rem;
+    font-size: 2rem;
+    color: var(--ColorSegundo);
+    font-weight: 200;
+
+}
