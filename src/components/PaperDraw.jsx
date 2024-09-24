@@ -1,10 +1,8 @@
 import './PaperDraw.css'
 
-const Header = () => {
-  return (
-    
-<>
-  
+const PaperDraw = () => {
+  return (   
+    <> 
       <div className="container">
         <h2>Cuando devienen obra gráfica <br/>
         <span>Naturaleza y Materia</span></h2>
@@ -25,14 +23,10 @@ const Header = () => {
             </div>
           </div>
         </div>
-
-
       </div>
-
-</>
-
+    </>
   )
 }
 
-export default Header
+export default PaperDraw
 

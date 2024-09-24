@@ -46,7 +46,7 @@ const TiendaVirtual = ({ productos, carrito, agregarAlCarrito, vaciarAlCarrito, 
                   {carrito.map((item, index) => (
                       <div key={index} className="carrito-item">
                           <img
-                              src={item.imagen}
+                              src={item.src}
                               alt={item.categoria}
                               className="carrito-item-imagen"
                           />

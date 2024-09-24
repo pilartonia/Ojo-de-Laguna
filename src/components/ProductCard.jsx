@@ -6,7 +6,7 @@ const ProductCard = ({ producto, onAgregarAlCarrito }) => {
   return (
     <div className="producto-card">
       <img 
-        src={producto.imagen} 
+        src={producto.src} 
         alt={producto.categoria} 
         className="producto-imagen"
       />
