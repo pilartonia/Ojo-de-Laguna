@@ -1,6 +1,7 @@
 import './Navigation.css'
 import { GiHamburgerMenu } from "react-icons/gi";
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const Navigation = () => {
   // Estado para controlar el menú
@@ -9,6 +10,11 @@ const Navigation = () => {
   const sideMenu = () => {
     setIsOpen(!isOpen);  
   }
+  const navigate = useNavigate();
+  const handleNavigation = (path) => {
+    navigate(path);
+    setIsOpen(false); // Cerrar el menú después de la navegación
+  };
   return (
     <header>
         <img src="/src/img/Mesa de trabajo 1 (1).png" alt="logo"/>
@@ -21,9 +27,9 @@ const Navigation = () => {
         {/* Menú lateral */}
         <nav className={`side-menu ${isOpen ? 'open' : ''}`}>
           <ul>
-            <li><a href="/App">Home</a></li>
-            {/*<li><a href="/Taller">Talleres</a></li>*/}
-            <li><a href="/Tienda_Virtual">Tienda Virtual</a></li>
+            <li><a onClick={() => handleNavigation("/Home")}>Home</a></li>
+            {/*<li><a onClick={() => navigate(`/Taller`)}>Talleres</a></li>*/}
+            <li><a onClick={() => handleNavigation("/Tienda_virtual")} >Tienda Virtual</a></li>
           </ul>
         </nav>
     </header>

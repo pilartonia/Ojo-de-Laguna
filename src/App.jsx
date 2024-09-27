@@ -6,6 +6,7 @@ import Navigation from './components/Navigation';
 import PaperDraw from './components/PaperDraw';
 import Cartografy from './components/Cartografy';
 import { BrowserRouter as Router, Routes, Route, BrowserRouter } from "react-router-dom";
+import { Navigate } from 'react-router-dom';
 
 const App = ()=>{
   const [carrito, setCarrito] = useState([]);
@@ -33,13 +34,22 @@ const eliminarDelCarrito = (productoId) => {
 
   return(
     <>
-      <Navigation/>
-      <Header/>
-      <PaperDraw/>
-      <Cartografy/>
       <BrowserRouter>
         <Routes>
-         <Route path="/tienda_virtual" element={
+        //Redirigir de "/" a "/Home"//
+          <Route path="/" element={<Navigate to="/Home" />} />
+          <Route path="/Home" element={
+            <>            
+            <Navigation/>
+            <Header/>
+            <PaperDraw/>
+            <Cartografy/>
+            <Footer/>
+            </>
+          } />
+         <Route path="/Tienda_virtual" element={
+          <>
+            <Navigation/>
            <TiendaVirtual
               carrito={carrito}
               setCarrito={setCarrito}
@@ -47,10 +57,12 @@ const eliminarDelCarrito = (productoId) => {
               eliminarDelCarrito={eliminarDelCarrito}
               vaciarAlCarrito={vaciarAlCarrito}
               productos={productos} />
-         } />
+            <Footer/>
+          </>
+         }/>
         </Routes>
         </BrowserRouter>
-      <Footer/>
+      
     </>
   )
 }
