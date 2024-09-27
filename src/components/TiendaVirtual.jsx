@@ -1,28 +1,27 @@
 import React, { useState } from 'react';
-import ProductCard from './ProductCard';
 import App from '../App'; 
+import ProductCard from './ProductCard';
+import { useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 const TiendaVirtual = ({ productos, carrito, agregarAlCarrito, vaciarAlCarrito, eliminarDelCarrito }) => {
+    const [busqueda, setBusqueda] = useState('');
 
-  const [busqueda, setBusqueda] = useState('');
-
-  const productosFiltrados = productos.filter(producto =>
+    const productosFiltrados = productos.filter(producto =>
       producto.categoria.toLowerCase().includes(busqueda.toLowerCase())
-  );
+    );
 
   return (
       <div className="container">
-          <h1></h1>
-
+          <h1>Tienda Virtual</h1>
           <div >
-          <select onChange={(e) => handleOnchange(e.target.value)} className="buscador-input">
-            <option value="">Todas las Categorías</option>
-            <option value="Estampas de grabado">Estampas de grabado</option>
-            <option value="Bordado cartográfico">Bordado cartográfico</option>
-            <option value="Dibujos">Dibujos</option>
-            <option value="Fotografías performance">Fotografías performance</option>
-        </select>
-             
+            <select onChange={(e) => handleOnchange(e.target.value)} className="buscador-input">
+                <option value="">Todas las Categorías</option>
+                <option value="Estampas de grabado" onClick={()=>{productosFiltrados(value)}}>Estampas de grabado</option>
+                <option value="Bordados cartográficos" onClick={()=>{productosFiltrados(value)}}>Bordado cartográfico</option>
+                <option value="Dibujos" onClick={()=>{productosFiltrados(value)}}>Dibujos</option>
+                <option value="Fotografías performance" onClick={()=>{productosFiltrados(value)}}>Fotografías performance</option>
+            </select>         
           </div>
 
           <div className="productos-grid">

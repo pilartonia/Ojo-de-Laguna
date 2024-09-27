@@ -37,3 +37,40 @@ header img {
    
     
 }
+/* Estilos del menú lateral */
+.side-menu {
+    position: fixed;
+    top: 0;
+    right: -250px;  /* Fuera de la pantalla inicialmente */
+    width: 250px;
+    height: 100%;
+    background-color: #1F316F;
+    color: white;
+    padding-top: 60px;
+    transition: 0.3s ease;  /* Animación para el deslizamiento */
+  }
+  
+  .side-menu.open {
+    right: 0;  /* Aparece en la pantalla */
+  }
+  
+  .side-menu ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .side-menu ul li {
+    margin: 20px 0;
+    text-align: center;
+  }
+  
+  .side-menu ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.5rem;
+  }
+  
+  .side-menu ul li a:hover {
+    color: #ffda79;  /* Efecto hover */
+  }
+  

@@ -28,5 +28,5 @@ const PaperDraw = () => {
   )
 }
 
-export default PaperDraw
+export default PaperDraw;
 

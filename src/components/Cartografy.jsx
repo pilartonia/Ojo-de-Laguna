@@ -2,8 +2,6 @@ import './Cartografy.css'
 
 const Cartografy = () => {
   return (
-
-
     <div className="secado_plantas">
       <img className="pinzas" src="/src/img/Manos y caléndula.png" alt="proceso de secar flores" />
       <h4>Estrategias para <span>cartografiar, geolocalizar y prensar</span></h4>

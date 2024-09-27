@@ -1,6 +1,6 @@
 import React from 'react';
 import App from '../App'; 
-import TiendaVirtual from './cart';
+import TiendaVirtual from './TiendaVirtual';
 
 const ProductCard = ({ producto, onAgregarAlCarrito }) => {
   return (
