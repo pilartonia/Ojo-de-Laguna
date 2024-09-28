@@ -38,6 +38,7 @@ Copiar código:npm install
 Copiar código: npm run dev
 
 ##  Uso
+Se recomiendo usar en vista de teléfono móvil
 
 Explora el Home page, ahí encontrarás detalles sobre Ojo de laguna y las técnicas que utilizamos para las obras de arte. En el menú lateral podrás econtrar la tienda virtual en donde están los productos que puedes adquirir y la pagina de talleres donde podrás inscribirte al que más te interese.
 
