@@ -42,16 +42,21 @@ header img {
     position: fixed;
     top: 0;
     right: -250px;  /* Fuera de la pantalla inicialmente */
-    width: 250px;
-    height: 100%;
-    background-color: #1F316F;
-    color: white;
-    padding-top: 60px;
+    width: 200px;
+    height: 50%;
+    background-color: #1A4870;
+    color:#FAF1E6;
+    padding-top: 20px;
     transition: 0.3s ease;  /* Animación para el deslizamiento */
   }
   
   .side-menu.open {
     right: 0;  /* Aparece en la pantalla */
+    font-family: Poppins;
+    font-size: 29px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
   }
   
   .side-menu ul {
@@ -72,5 +77,23 @@ header img {
   
   .side-menu ul li a:hover {
     color: #ffda79;  /* Efecto hover */
+  }
+
+  .button-close {
+    width: 25px;
+    height: 25px;
+    font-size: 40%;
+    margin-top: 0.5rem;
+    margin-left: 0.5rem;
+    color: #1A4870;
+    padding: 0.5rem 1rem;
+    border-radius: 0.25rem;
+    border: none;
+    cursor: pointer;
+    background-color: #f9f9f9;
+  }
+  .button-close:hover {
+    background-color: #1A4870;
+    color: white;
   }
   

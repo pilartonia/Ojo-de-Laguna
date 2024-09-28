@@ -26,6 +26,7 @@ const Navigation = () => {
         </a>
         {/* Menú lateral */}
         <nav className={`side-menu ${isOpen ? 'open' : ''}`}>
+          <button className='button-close' onClick={sideMenu}>X</button>
           <ul>
             <li><a onClick={() => handleNavigation("/Home")}>Home</a></li>
             {/*<li><a onClick={() => navigate(`/Taller`)}>Talleres</a></li>*/}

@@ -1,39 +1,43 @@
 import React, { useState } from 'react';
 import App from '../App'; 
 import ProductCard from './ProductCard';
-import { useNavigate } from 'react-router-dom';
-import { Link } from 'react-router-dom';
+import Select from 'react-select'
 
 const TiendaVirtual = ({ productos, carrito, agregarAlCarrito, vaciarAlCarrito, eliminarDelCarrito }) => {
-    const [busqueda, setBusqueda] = useState('');
+    const [busqueda, setBusqueda] = useState("");
 
-    const productosFiltrados = productos.filter(producto =>
-      producto.categoria.toLowerCase().includes(busqueda.toLowerCase())
-    );
+    const productosFiltrados =
+      productos.filter(producto =>
+      producto.categoria.includes(busqueda));
+
+    const options =[
+        {value:"Bordados cartográficos", label:"Bordados cartográficos"},
+        {value:"Dibujo", label: "Dibujo"},
+        {value:"Fotografías performance", label:"Fotografías performance"},
+        {value:"Estampas de grabado", label:"Estampas de grabado"}
+    ];
 
   return (
       <div className="container">
           <h1>Tienda Virtual</h1>
           <div >
-            <select onChange={(e) => handleOnchange(e.target.value)} className="buscador-input">
-                <option value="">Todas las Categorías</option>
-                <option value="Estampas de grabado" onClick={()=>{productosFiltrados(value)}}>Estampas de grabado</option>
-                <option value="Bordados cartográficos" onClick={()=>{productosFiltrados(value)}}>Bordado cartográfico</option>
-                <option value="Dibujos" onClick={()=>{productosFiltrados(value)}}>Dibujos</option>
-                <option value="Fotografías performance" onClick={()=>{productosFiltrados(value)}}>Fotografías performance</option>
-            </select>         
+            <Select className="buscador-input" 
+            options={options}
+             onChange={(e) => {
+                const categoriaSeleccionada = (e);
+                setBusqueda(categoriaSeleccionada);
+                }}>
+            </Select>         
           </div>
 
           <div className="productos-grid">
-              {productosFiltrados.length > 0 ? productosFiltrados.map((producto) => (
+              { productosFiltrados.map((producto) => (
                   <ProductCard
                       key={producto.id}
                       producto={producto}
                       onAgregarAlCarrito={agregarAlCarrito}
                   />
-              )) : (
-                  <p> No se encontraron registros </p>
-              )}
+               )) }
           </div>
 
           <div className="carrito">
@@ -58,6 +62,7 @@ const TiendaVirtual = ({ productos, carrito, agregarAlCarrito, vaciarAlCarrito, 
               <p className="carrito-total">
                   Total: ${carrito.reduce((sum, item) => sum + item.precio, 0)}
               </p>
+              <button className='boton-agregar'>Pagar</button>
           </div>
       </div>
   );
