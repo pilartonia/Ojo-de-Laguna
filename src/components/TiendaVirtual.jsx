@@ -24,7 +24,7 @@ const TiendaVirtual = ({ productos, carrito, agregarAlCarrito, vaciarAlCarrito, 
             <Select className="buscador-input" 
             options={options}
              onChange={(e) => {
-                const categoriaSeleccionada = (e);
+                const categoriaSeleccionada = (e.value);
                 setBusqueda(categoriaSeleccionada);
                 }}>
             </Select>         

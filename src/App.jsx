@@ -11,10 +11,10 @@ import { Navigate } from 'react-router-dom';
 const App = ()=>{
   const [carrito, setCarrito] = useState([]);
   const productos = [
-    { id: 1, categoria:"Dibujo", precio: 20, imagen: "Gato.jpg", src:"/src/img/Gato.jpg"},
-    { id: 2, categoria: "Estampas de grabado", precio: 20, imagen: "Estampado_Hoja.jpg", src:"/src/img/Estampado_Hoja.jpg" },
-    { id: 3, categoria:"Dibujo", precio: 20, imagen: "Dibujo.jpg", src:"/src/img/Dibujo.jpg" },
-    { id: 4, categoria:"Dibujo", precio: 20, imagen: "pajaro.jpg", src:"/src/img/pajaro.jpg" }
+    { id: 1, categoria:"Dibujo", precio: "USD 20", imagen: "Gato.jpg", src:"/src/img/Gato.jpg"},
+    { id: 2, categoria: "Estampas de grabado", precio: "USD 20", imagen: "Estampado_Hoja.jpg", src:"/src/img/Estampado_Hoja.jpg" },
+    { id: 3, categoria:"Dibujo", precio: "USD 20", imagen: "Dibujo.jpg", src:"/src/img/Dibujo.jpg" },
+    { id: 4, categoria:"Dibujo", precio: "USD 20", imagen: "pajaro.jpg", src:"/src/img/pajaro.jpg" }
   ];
   const agregarAlCarrito = (producto) => {
     setCarrito([...carrito, producto]);
