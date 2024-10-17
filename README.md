@@ -18,7 +18,7 @@ Este proyecto es una Tienda online de venta de arte donde el cliente pueda obser
 
 *bash*
 
-Copiar código:git clone https://github.com/pilartonia/team12ODL.git
+Copiar código:git clone https://github.com/pilartonia/Ojo-de-Laguna.git
 
 cd team12ODL
 
