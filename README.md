@@ -3,7 +3,6 @@ Laboratorio de Arte y Diseño
 
 ## Índice
     Descripción
-    Demo
     Instalación
     Uso
     Características
@@ -11,9 +10,7 @@ Laboratorio de Arte y Diseño
     Autores
 
 ## Descripción
-Este proyecto es una Tienda online de venta de arte donde el cliente pueda observar el catálogo disponible, realizar una solicitud personalizada, una descripción de las técnicas de las piezas, Adquirir obras, inscribirse a talleres y seguir las redes sociales del proyecto​. Fue construida usando React.js en el frontend.
-
-##  Demo
+Este proyecto es una Tienda online de venta de arte donde el cliente pueda observar el catálogo disponible, realizar una solicitud personalizada, una descripción de las técnicas de las piezas y Adquirir obras​. Fue construida usando React.js en el frontend.
 
 ##  Instalación
 
@@ -38,9 +35,11 @@ Copiar código:npm install
 Copiar código: npm run dev
 
 ##  Uso
-Se recomiendo usar en vista de teléfono móvil
 
 Explora el Home page, ahí encontrarás detalles sobre Ojo de laguna y las técnicas que utilizamos para las obras de arte. En el menú lateral podrás econtrar la tienda virtual en donde están los productos que puedes adquirir y la pagina de talleres donde podrás inscribirte al que más te interese.
+
+>[!IMPORTANT]
+>la vista esta diseñada para uso en teléfono móvil
 
 ##  Características
 Lista de características principales del proyecto.
